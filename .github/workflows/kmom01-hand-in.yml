@@ -19,4 +19,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm run kmom01-hand-in
+    - run: npm run test-kmom01-hand-in
