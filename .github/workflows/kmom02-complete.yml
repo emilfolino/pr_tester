@@ -1,0 +1,21 @@
+name: kmom02-complete
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  if_merged:
+    if: startsWith(github.head_ref, 'kmom02') && github.event.pull_request.merged
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js lts
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts
+        cache: 'npm'
+    - run: npm run test-kmom02-complete
