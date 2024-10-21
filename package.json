@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-kmom01-hand-in": "echo \"kmom01-hand-in\" && exit 0",
     "test-kmom01-complete": "echo \"kmom01-complete\" && exit 0",
-    "test-kmom02": "echo \"kmom02\" && exit 0"
+    "test-kmom02-hand-in": "echo \"kmom02-hand-in\" && exit 0",
+    "test-kmom02-complete": "echo \"kmom02-complete\" && exit 0"
   },
   "keywords": [],
   "author": "",
