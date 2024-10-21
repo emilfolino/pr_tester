@@ -3,20 +3,19 @@
 
 name: kmom02
 
-
 on:
   pull_request:
     types:
-      - opened
+      - closed
 jobs:
-  run_if:
-    if:  startsWith(github.head_ref, 'kmom02')
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm run test-kmom02
+  if_merged:
+    if: github.event.pull_request.merged == true
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm run test-kmom02
